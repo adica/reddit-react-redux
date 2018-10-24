@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './components/nav/nav';
+import { links } from './mock-data';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Registration from './components/user/registration';
 import Links from './components/links/links';
@@ -33,7 +34,7 @@ class App extends React.Component {
                 <div className="reddit-app">
 
                     <h1>Reddit {this.state.validUser}</h1>
-                    <Nav />
+                    {/*<Nav />*/}
 
                     <Route exact path="/" render={() => (
                         <React.Fragment>
@@ -57,7 +58,7 @@ class App extends React.Component {
                                 <Redirect to="/" />
                             )}
                             {this.state.validUser && (
-                                <Links />
+                                <Links links={links} />
                             )}
                         </React.Fragment>
                     )} />

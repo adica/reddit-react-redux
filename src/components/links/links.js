@@ -1,7 +1,12 @@
 import React from 'react';
+import Link from './link';
 
-export default function Links() {
+export default function Links({ links }) {
     return (
-        <div>linklink</div>
+        <div>
+            {links.map((link, index) => (
+                <Link key={link.title} link={link} />
+            ))}
+        </div>
     );
 }
